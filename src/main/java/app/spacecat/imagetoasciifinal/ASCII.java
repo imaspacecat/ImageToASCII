@@ -10,9 +10,17 @@ class ASCII {
         this.isNegative = isNegative;
     }
 
-    String convert(BufferedImage image, int scale) throws IOException {
+    String convert(BufferedImage image, double scale){
 
-        BufferedImage scaledImage = resizeImage(image, image.getWidth()/scale, image.getHeight()/scale);
+        double stretchFactor = 1; //MAKE THICK
+
+        //the holy number 0.6285714286
+
+        //for discord width/263 = scale
+
+//        final int characterWidth = 263;
+
+        BufferedImage scaledImage = resizeImage(image, (int)Math.round(image.getWidth()/scale), (int)Math.round((image.getHeight()/scale)*stretchFactor*0.6285714286));
 
         StringBuilder stringBuilder = new StringBuilder();
 
