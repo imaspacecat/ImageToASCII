@@ -1,7 +1,6 @@
 package app.spacecat.imagetoasciifinal;
 import java.awt.*;
 import java.awt.image.BufferedImage;
-import java.io.IOException;
 
 class ASCII {
     boolean isNegative;
@@ -16,11 +15,14 @@ class ASCII {
 
         //the holy number 0.6285714286
 
-        //for discord width/263 = scale
+        //for discord width/characterWidth = scale
+        //263/height =1280/720
+        //263/(ogwidth/ogheight)
 
-//        final int characterWidth = 263;
 
-        BufferedImage scaledImage = resizeImage(image, (int)Math.round(image.getWidth()/scale), (int)Math.round((image.getHeight()/scale)*stretchFactor*0.6285714286));
+        //width/263 = scale
+        System.out.println(image.getHeight() + " " + image.getWidth());
+        BufferedImage scaledImage = resizeImage(image, 263, (int)Math.round((263*((float) image.getHeight() / (float) image.getWidth()))*stretchFactor*0.6285714286));
 
         StringBuilder stringBuilder = new StringBuilder();
 

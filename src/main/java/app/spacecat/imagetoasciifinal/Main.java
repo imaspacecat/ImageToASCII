@@ -18,11 +18,11 @@ class Main{
      */
 
     public static void main(String[] args) throws IOException {
-        File file  = new File("C:\\Users\\yotam\\Desktop\\banana.jpg");
+        File file  = new File("C:\\Users\\yotam\\Desktop\\vector1.jpg");
         BufferedImage image = ImageIO.read(file);
 
         ASCII ascii = new ASCII(false);
-        String asciiArt = ascii.convert(image ,6);
+        String asciiArt = ascii.convert(image ,1);
 
         System.out.println(asciiArt);
     }
